@@ -46,6 +46,7 @@ func main() {
 
 	tbl := client.Open(table)
 
+	// Exercise 2.1
 	// read from row2 and read modify write (append) it to row1
 	// hint: check the row value with
 	// cbt --project test --instance test lookup tbl row1
@@ -77,6 +78,7 @@ func main() {
 	// family: meme, column: pepe, value: e.g. pepe_noted
 	// do a lookup after each insert to see that there is never more than one version
 
+	// Exercise 2.2
 	// cbt --project test --instance test createfamily tbl pepe
 	// cbt --project test --instance test setgcpolicy tbl pepe maxversions=1
 	// cbt --project test --instance test set tbl row1 meme:pepe=pepe_noted
@@ -85,6 +87,16 @@ func main() {
 	// cbt --project test --instance test lookup tbl row1 columns=meme
 	// cbt --project test --instance test set tbl row1 meme:pepe=monka_christ
 	// cbt --project test --instance test lookup tbl row1 columns=meme
+
+	// Exercise 2.3
+	// cbt --project test --instance test createfamily tbl ico
+	// cbt --project test --instance test setgcpolicy tbl ico maxage=60s
+	// cbt --project test --instance test set tbl row1 ico:symbol=USDT
+	// cbt --project test --instance test lookup tbl row1 columns=symbol
+	// cbt --project test --instance test set tbl row1 ico:symbol=DAI
+	// cbt --project test --instance test lookup tbl row1 columns=symbol
+	// cbt --project test --instance test set tbl row1 ico:symbol=yDAI
+	// cbt --project test --instance test lookup tbl row1 columns=symbol
 }
 
 // if something goes wrong you can always restart the emulator, since the emulator is in-memory you will have a fresh start

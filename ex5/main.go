@@ -46,28 +46,30 @@ func main() {
 
 	tbl := client.Open(table)
 
-	// Exercise 2.1
-	// read from row2 and read modify write (append) it to row1
-	// hint: check the row value with
-	// cbt --project test --instance test lookup tbl row1
+	// Bonus Exercise
 
-	// Exercise 2.2
-	// using the cbt (alias bt) utility
-	// create a new column family called meme with cbt and set its garbage collection policy to maxversions 1
-	// insert three different values within the meme column family and the column pepe (such as pepe_noted)
-	// do a lookup after each insert to see that there is never more than one version
-	// family: meme
-	// column: pepe
-	// value: e.g. pepe_noted
+	// Exercise 5.1
+	// Given the keys
+	// token:1
+	// token:101
+	// token:2000
+	// token:5
+	// token:54
+	// token:92
+	// token:8
+	// token:456
+	// First manually sort them into their lexicographical ascending order.
+	// Next write a sort function to compare your order with the results of the sort function.
 
-	// Exercise 2.3
-	// using the cbt (alias bt) utility
-	// create a new column family called ico with cbt and set its garbage collection policy to maxage 60s
-	// insert three different values within the ico column family and the column symbol (such as usdt)
-	// do a lookup after each insert to see the change in results over time.
-	// family: ico
-	// column: symbol
-	// value: e.g. usdt
+	// Exercise 5.2
+	// Insert the given rows into bigtable such that you can query them in descending order.
+
+	// Exercise 5.3
+	// Write a function that returns a key which is lexicographical one value higher, or lower than the given input key
+
+	// Exercise 5.4
+	// Write a paging query function such that you can use the last returned row to query successive (N + 1) rows where N is the last row of the previous query.
+
 }
 
 // if something goes wrong you can always restart the emulator, since the emulator is in-memory you will have a fresh start
