@@ -65,7 +65,7 @@ func main() {
 	// Insert the given rows into bigtable such that you can query them in descending order.
 
 	// Exercise 5.3
-	// Write a function that returns a key which is lexicographical one value higher, or lower than the given input key
+	// Write a function that returns a key which is lexicographical one value higher than the given input key
 
 	// Exercise 5.4
 	// Write a paging query function such that you can use the last returned row to query successive (N + 1) rows where N is the last row of the previous query.
